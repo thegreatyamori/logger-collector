@@ -10,4 +10,4 @@ cd $LOGS_FOLDER;
 
 if ! [ -f "$FILE" ]; then touch $FILE; fi
 
-echo $LINE >> $FILE
+echo $LINE >> $FILE;

@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const { exec } = require("child_process");
 
-const port = 3219;
 const host = "0.0.0.0";
 const app = express();
 app.use(cors());
@@ -23,7 +22,7 @@ app.get("/log", (req, res) => {
   });
 });
 
-app.listen(port, host, () => {
-  console.log(`${process.env}`);
+app.listen(process.env.PORT, host, () => {
+  console.log(`${JSON.stringify(process.env)}`);
   console.log(`Server running on port ${port}`);
 });
