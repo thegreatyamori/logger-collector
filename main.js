@@ -2,8 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const { exec } = require('child_process');
 
-const port = 3000;
-const host = 'localhost';
+const port = 3219;
+const host = '0.0.0.0';
 const app = express();
 app.use(cors());
 
@@ -19,10 +19,10 @@ app.get("/log", (req, res) => {
             return;
         }
 
-        res.json({ log_message: stdout });
+        res.json({ log_message: "log created!" });
     });
 });
 
-app.listen(port, host, () => {
+app.listen(process.ENV.PORT || port, host, () => {
     console.log(`Server running on port ${port}`);
 });
